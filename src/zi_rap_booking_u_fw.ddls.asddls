@@ -3,6 +3,8 @@
 
 define view entity ZI_RAP_BOOKING_U_FW as select from /dmo/booking 
 
+association to parent ZI_RAP_TRAVEL_U_FW as _Travel on $projection.TravelId = _Travel.TravelId
+
 association [1..1] to /DMO/I_Carrier    as _Carrier    on  $projection.CarrierId    = _Carrier.AirlineID
 association [1..1] to /DMO/I_Customer   as _Customer   on  $projection.CustomerId   = _Customer.CustomerID
 association [1..1] to /DMO/I_Connection as _Connection on  $projection.CarrierId    = _Connection.AirlineID
@@ -24,6 +26,7 @@ association [1..1] to /DMO/I_Flight     as _Flight     on  $projection.CarrierId
     currency_code as CurrencyCode,
     
     /* asociations */
+    _Travel,
     _Carrier,
     _Customer,
     _Connection, 

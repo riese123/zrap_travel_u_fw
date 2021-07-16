@@ -1,15 +1,8 @@
 @EndUserText.label: 'Travel Data'
 @Metadata.ignorePropagatedAnnotations: true
-/*@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: 'Travel data Unmanaged FW'
-@Metadata.ignorePropagatedAnnotations: true
-@ObjectModel.usageType:{
-    serviceQuality: #X,
-    sizeCategory: #S,
-    dataClass: #MIXED
-}*/
-define view entity ZI_RAP_TRAVEL_U_FW as select from /dmo/travel
+
+define root view entity ZI_RAP_TRAVEL_U_FW as select from /dmo/travel
+composition [0..*] of ZI_RAP_BOOKING_U_FW as _Booking
 association [0..1] to /DMO/I_Agency as _Agency on $projection.AgencyId = _Agency.AgencyID
 association [0..1] to /DMO/I_Customer as _Customer on $projection.CustomerId = _Customer.CustomerID
 association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
@@ -36,6 +29,7 @@ association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Cur
     @Semantics.systemDateTime.lastChangedAt: true
     lastchangedat as Lastchangedat,
     
+    _Booking,
     _Agency,
     _Customer,
     _Currency

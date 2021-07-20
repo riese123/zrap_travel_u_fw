@@ -12,6 +12,7 @@
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
     <CLSDEFINT>ZI_RAP_TRAVEL_U_FW</CLSDEFINT>
+    <WITH_UNIT_TESTS>X</WITH_UNIT_TESTS>
    </VSEOCLASS>
   </asx:values>
  </asx:abap>

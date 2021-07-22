@@ -4,20 +4,20 @@
 @Metadata.allowExtensions: true
 define view entity ZC_RAP_BOOKING_U_FW as projection on ZI_RAP_BOOKING_U_FW {
     @Search.defaultSearchElement: true
-    key TravelId,
+    key TravelID,
     @Search.defaultSearchElement: true
-    key BookingId,
+    key BookingID,
     BookingDate,
     @Consumption.valueHelpDefinition: [{ 
                                          entity: { name:    '/DMO/I_Customer',
                                                    element: 'CustomerID' } 
                                       } ]
-    CustomerId,
+    CustomerID,
     @Consumption.valueHelpDefinition: [{
                                          entity: { name:    '/DMO/I_Carrier',
                                                    element: 'AirlineID' }
                                       } ]
-    CarrierId,
+    CarrierID,
     @Consumption.valueHelpDefinition: [{
                                          entity: { name:    '/DMO/I_Flight',
                                                    element: 'ConnectionID' },
@@ -37,7 +37,7 @@ define view entity ZC_RAP_BOOKING_U_FW as projection on ZI_RAP_BOOKING_U_FW {
                                                             }]
                                                             
                                       }]
-    ConnectionId,
+    ConnectionID,
     FlightDate,
     FlightPrice,
     @Consumption.valueHelpDefinition: [{

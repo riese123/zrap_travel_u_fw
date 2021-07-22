@@ -6,10 +6,10 @@
   title: { 
     type: #STANDARD,
     label: 'Travel',
-    value: 'TravelID'
+    value: 'TravelId'
     }
     },
-    presentationVariant: [{ sortOrder: [ { by:        'TravelID',
+    presentationVariant: [{ sortOrder: [ { by:        'TravelId',
                                            direction: #DESC } ] }] 
 }
 annotate view ZC_RAP_Travel_U_FW
@@ -22,7 +22,7 @@ annotate view ZC_RAP_Travel_U_FW
                   position: 10 },
                  { id: 'Booking',
                    purpose: #STANDARD,
-                   type: #IDENTIFICATION_REFERENCE,
+                   type: #LINEITEM_REFERENCE,
                    label: 'Booking',
                    position: 20,
                    targetElement: '_Booking' }]
